@@ -22,8 +22,11 @@ awslocal lambda list-functions
 
 https://docs.localstack.cloud/user-guide/aws/lambda/
 
+```
 brew install awscli-local
+````
 
+```
 zip function.zip index.js
 
 awslocal lambda create-function \
@@ -32,6 +35,7 @@ awslocal lambda create-function \
     --zip-file fileb://function.zip \
     --handler index.handler \
     --role arn:aws:iam::000000000000:role/lambda-role
+```
 
 ```
 awslocal lambda invoke --function-name localstack-lambda-url-example \
