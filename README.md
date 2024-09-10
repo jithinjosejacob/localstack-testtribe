@@ -25,6 +25,7 @@ https://docs.localstack.cloud/user-guide/aws/lambda/
 brew install awscli-local
 
 zip function.zip index.js
+
 awslocal lambda create-function \
     --function-name localstack-lambda-url-example \
     --runtime nodejs18.x \
@@ -32,6 +33,8 @@ awslocal lambda create-function \
     --handler index.handler \
     --role arn:aws:iam::000000000000:role/lambda-role
 
+```
 awslocal lambda invoke --function-name localstack-lambda-url-example \
     --cli-binary-format raw-in-base64-out \
     --payload '{"body": "{\"num1\": \"10\", \"num2\": \"10\"}" }' output.txt
+```
